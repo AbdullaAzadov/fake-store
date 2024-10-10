@@ -1,11 +1,9 @@
 .header-wrapper {
     height: 3.5rem;
-    padding: 0 3rem;
-    background-color: #344966;
-    box-shadow: 0 2px 2px #34496654;
 }
 
 .header {
+    padding: 0 3rem;
     position: fixed;
     height: 3.5rem;
     width: 100vw;
@@ -15,4 +13,6 @@
     color: white;
     z-index: 1;
     font-size: 1.5rem;
+    background-color: #344966;
+    box-shadow: 0 2px 2px #34496654;
 }

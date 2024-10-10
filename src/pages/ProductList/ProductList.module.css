@@ -1,0 +1,9 @@
+.wrapper {
+    padding: 2rem 3rem;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: space-evenly;
+}
