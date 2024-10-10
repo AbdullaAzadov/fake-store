@@ -1,30 +1,14 @@
-import style from "./ProductList.module.css";
 import { useEffect, useState } from "react";
+import style from "./ProductList.module.css";
 
-import { fetchAllProducts } from "../../services/apiProducts";
+import useFetchProducts from "../../hooks/useFetchProducts";
 import ProductItem from "../../ui/ProductItem/ProductItem";
+import Loader from "../../ui/Loader/Loader";
 
 export default function ProductList() {
-    const [products, setProducts] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
+    const { products, isLoading, isError } = useFetchProducts();
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                setIsLoading(true);
-                const data = await fetchAllProducts();
-                setProducts(data);
-            } catch (e) {
-                setIsError(true);
-                console.log(e.message);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        fetchProducts();
-    }, []);
+    if (isLoading && !isError) return <Loader type="products" />;
 
     return (
         <main className={style.wrapper}>

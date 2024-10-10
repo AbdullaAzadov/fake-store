@@ -1,0 +1,14 @@
+.wrapper {
+    height: 90vh;
+    padding: 3rem 0 0;
+    margin: auto 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper svg {
+    font-size: 10rem;
+    color: #344966;
+}
