@@ -39,12 +39,13 @@
 }
 
 .product :global(.title) {
-    flex: 0.8;
+    flex: 0.7;
 }
 
 .product :global(.price) {
     flex: 0.2;
     font-size: 1.125rem;
+    text-align: end;
 }
 
 .product :global(.text-body) {
@@ -76,5 +77,48 @@
     .product :global(.text-header) {
         font-size: 1rem;
         margin: 0 0 0.5rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .product :global(.img-container) {
+        height: 5rem;
+        min-width: 5rem;
+        max-width: 5rem;
+    }
+
+    .product :global(.title) {
+        flex: 0.7;
+        font-size: 0.75rem;
+    }
+
+    .product :global(.price) {
+        font-size: 1rem;
+    }
+    .product :global(.text-body) {
+        font-size: 0.675rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .product :global(.text-container) {
+        padding: 0.125rem 0.25rem 0;
+        max-height: 10rem;
+    }
+    .product :global(.img-container) {
+        height: 5rem;
+        min-width: 3rem;
+        max-width: 3rem;
+    }
+    .product :global(.title) {
+        flex: 0.8;
+        font-size: 0.6rem;
+    }
+
+    .product :global(.price) {
+        font-size: 0.75rem;
+    }
+    .product :global(.text-body) {
+        font-size: 0.5rem;
     }
 }

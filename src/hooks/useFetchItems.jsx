@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { fetchAllProducts } from "../services/apiProducts";
 
-function useFetchProducts() {
-    const [products, setProducts] = useState([]);
+export function useFetchItems(fetchFunction) {
+    const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
@@ -10,8 +9,8 @@ function useFetchProducts() {
         const fetchProducts = async () => {
             try {
                 setIsLoading(true);
-                const data = await fetchAllProducts();
-                setProducts(data);
+                const data = await fetchFunction();
+                setItems(data);
             } catch (e) {
                 setIsError(true);
                 console.log(e.message);
@@ -23,7 +22,5 @@ function useFetchProducts() {
         fetchProducts();
     }, []);
 
-    return { products, isLoading, isError };
+    return { items, isLoading, isError };
 }
-
-export default useFetchProducts;

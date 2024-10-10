@@ -1,0 +1,41 @@
+.searchbar {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 0.5rem;
+    border: 1px solid rgba(124, 124, 124, 0.8);
+    border-radius: 1rem;
+    padding: 0.375rem 1rem;
+    color: rgb(52, 52, 52);
+    transition: all 0.3s;
+}
+
+.searchbar:hover {
+    border-color: #344966;
+    box-shadow: 0 0 1px #344966;
+}
+
+.searchbar svg {
+    font-size: 1.125rem;
+    color: rgba(124, 124, 124, 0.8);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.searchbar svg:hover {
+    color: #344966;
+}
+
+.search {
+    outline: none;
+    border: none;
+    background-color: white;
+    color: rgb(52, 52, 52);
+    font-size: 1.125rem;
+    transition: all 0.3s;
+}
+
+.search:focus {
+    color: #344966;
+}
