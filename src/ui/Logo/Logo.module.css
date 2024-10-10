@@ -1,0 +1,17 @@
+.logo {
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    opacity: 0.95;
+}
+.logo:hover {
+    opacity: 1;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+}
