@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export function useFetchItems(fetchFunction) {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
+    const [Error, setError] = useState(false);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -12,7 +12,7 @@ export function useFetchItems(fetchFunction) {
                 const data = await fetchFunction();
                 setItems(data);
             } catch (e) {
-                setIsError(true);
+                setError(true);
                 console.log(e.message);
             } finally {
                 setIsLoading(false);
@@ -22,5 +22,5 @@ export function useFetchItems(fetchFunction) {
         fetchProducts();
     }, []);
 
-    return { items, isLoading, isError };
+    return { items, isLoading, Error };
 }

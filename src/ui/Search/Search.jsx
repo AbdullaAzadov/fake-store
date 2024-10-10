@@ -1,7 +1,8 @@
-import { useState } from "react";
-import style from "./Search.module.css";
-import { FaSearch } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
+
+import { FaSearch } from "react-icons/fa";
+import style from "./Search.module.css";
 
 export default function Search({ placeholder }) {
     const [searchParams, setSearchParams] = useSearchParams();
