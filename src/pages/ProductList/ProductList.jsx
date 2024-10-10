@@ -16,6 +16,7 @@ export default function ProductList() {
 
     if (isLoading && !Error) return <Loader type="products" />;
     if (Error) return <NotFound causer="network" />;
+
     return (
         <main className={style.wrapper}>
             <nav className={style.filters}>
@@ -24,6 +25,7 @@ export default function ProductList() {
             </nav>
             <Sort />
 
+            {!isLoading && !products.length && <NotFound causer="filter" />}
             <ul className={style.products}>
                 {products.map((product) => (
                     <ProductItem key={product.id} product={product} />
